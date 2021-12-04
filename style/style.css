@@ -278,7 +278,7 @@ section {
   padding: 0;
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 #showcase .slide {
@@ -300,11 +300,12 @@ section {
 
 #showcase .slide .content {
   position: absolute;
-  left: 10%;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  z-index: 2;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 35vh 10%;
+  z-index: 20;
 }
 
 #showcase .slide .content .title,
@@ -315,10 +316,12 @@ section {
 #showcase .slide .content .title {
   font-size: 4rem;
   letter-spacing: 5px;
+  line-height: 1;
 }
 
 #showcase .slide .content .body-text {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  margin-top: 1em;
 }
 
 #showcase .slide.active {
@@ -377,7 +380,27 @@ section {
   z-index: 1;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 820px) {
+  #showcase .slide .content .title {
+    font-size: 2rem;
+  }
+  #showcase .slide .content .body-text,
+  #showcase .slide .content .btn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #showcase .slide .content .title {
+    font-size: 4rem;
+  }
+  #showcase .slide .content .body-text,
+  #showcase .slide .content .btn {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 760px) {
   #showcase {
     overflow-x: hidden;
   }
@@ -439,6 +462,13 @@ section {
   }
   #showcase #header .toggle-btn span {
     background-color: #f1f0f1;
+  }
+  #showcase .slide .content .title {
+    font-size: 4rem;
+  }
+  #showcase .slide .content .body-text,
+  #showcase .slide .content .btn {
+    font-size: 1.125rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
