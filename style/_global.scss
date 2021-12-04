@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 *,
 *::after,
@@ -67,6 +68,7 @@ section {
 .main-title {
   font-weight: 700;
   font-size: 2.625rem;
+  font-family: "Bebas Neue", cursive;
 
   position: relative;
   width: max-content;
@@ -89,11 +91,13 @@ section {
 .title {
   font-weight: 700;
   font-size: 1.5rem;
+  font-family: "Bebas Neue", cursive;
 }
 
 .subtitle {
   font-size: 1.125rem;
   font-weight: 600;
+  font-family: "Bebas Neue", cursive;
 }
 
 .body-text {

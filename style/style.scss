@@ -1,3 +1,273 @@
 @import "colors";
 @import "mixins";
 @import "global";
+
+.container {
+  width: 80%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+#showcase {
+  position: relative;
+  min-height: 100vh;
+
+  // header
+  #header {
+    height: 70px;
+    position: relative;
+    z-index: 99999;
+
+    .container {
+      height: inherit;
+      @include flex();
+    }
+
+    // logo
+    .logo {
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $yellow;
+
+        span {
+          color: $light;
+        }
+      }
+    }
+
+    // nav
+    .nav {
+      .nav-list {
+        @include flex();
+
+        li {
+          &:not(:last-child) {
+            margin-right: 2em;
+          }
+          a {
+            color: $light;
+            font-size: 1.125rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease-in-out;
+          }
+          a.active {
+            color: $yellow;
+          }
+          a:hover {
+            color: $yellow;
+          }
+        }
+      }
+    }
+
+    // cart
+    .cart-container {
+      cursor: pointer;
+      position: relative;
+      @include flex();
+
+      .fa-cart-plus {
+        font-size: 1.25rem;
+        color: $light;
+      }
+
+      .cart-itmes {
+        position: absolute;
+        top: -10px;
+        left: 80%;
+        background-color: $yellow;
+        height: 18px;
+        width: 18px;
+        display: grid;
+        place-items: center;
+        line-height: 0;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+    }
+
+    // toggle button
+    .toggle-btn {
+      cursor: pointer;
+      display: none;
+
+      span {
+        display: inline-block;
+        height: 2px;
+        width: 20px;
+        background-color: $black;
+        transform-origin: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+      span:not(:last-child) {
+        margin-bottom: 5px;
+      }
+
+      // toggle active
+      &.active {
+        span:nth-child(1) {
+          transform: rotate(-45deg);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  // header active
+  #header.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $black;
+  }
+
+  //   slides section ==============
+  .slides {
+    padding: 0;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+
+    img {
+      object-position: center;
+      object-fit: cover;
+      height: 100%;
+    }
+
+    .content {
+      position: absolute;
+      left: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+
+      .title,
+      .body-text {
+        color: $light;
+      }
+
+      .title {
+        font-size: 4rem;
+        letter-spacing: 5px;
+      }
+
+      .body-text {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  //   slide indicator
+  #slide-indicator {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    @include flex();
+
+    li {
+      padding: 0.5em;
+      line-height: 0;
+      cursor: pointer;
+
+      &.active{
+          border: 1px dashed $black;
+      }
+    }
+
+    span {
+      display: inline-block;
+      height: 3px;
+      width: 100px;
+      background-color: $light;
+    }
+  }
+
+  //   overlay ===========
+  .overlay {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+}
+
+// media
+@media (max-width: 800px) {
+  #showcase {
+    overflow-x: hidden;
+
+    #header {
+      // nav
+      .nav {
+        position: absolute;
+        inset: 0 0 0 30%;
+        padding: min(30vh, 10vh) 2em;
+        height: 100vh;
+        background: $black;
+        z-index: 1000;
+
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+          transform: translateX(0%);
+        }
+      }
+
+      .nav-list {
+        height: 100%;
+        width: 100%;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
+        gap: 1em;
+
+        li {
+          margin: 0 !important;
+        }
+      }
+
+      //   cart
+      .cart-container {
+        margin-left: auto;
+        margin-right: 2.5em;
+      }
+
+      // toggle button
+      .toggle-btn {
+        @include flex(column);
+        z-index: 1001;
+
+        span {
+          background-color: $light;
+        }
+      }
+    }
+  }
+}

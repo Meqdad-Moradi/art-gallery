@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 *,
 *::after,
 *::before {
@@ -68,6 +69,7 @@ section {
 .main-title {
   font-weight: 700;
   font-size: 2.625rem;
+  font-family: "Bebas Neue", cursive;
   position: relative;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -92,14 +94,351 @@ section {
 .title {
   font-weight: 700;
   font-size: 1.5rem;
+  font-family: "Bebas Neue", cursive;
 }
 
 .subtitle {
   font-size: 1.125rem;
   font-weight: 600;
+  font-family: "Bebas Neue", cursive;
 }
 
 .body-text {
   font-size: 1rem;
+}
+
+.container {
+  width: 80%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+#showcase {
+  position: relative;
+  min-height: 100vh;
+}
+
+#showcase #header {
+  height: 70px;
+  position: relative;
+  z-index: 99999;
+}
+
+#showcase #header .container {
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#showcase #header .logo h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffb00d;
+}
+
+#showcase #header .logo h1 span {
+  color: #f1f0f1;
+}
+
+#showcase #header .nav .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#showcase #header .nav .nav-list li:not(:last-child) {
+  margin-right: 2em;
+}
+
+#showcase #header .nav .nav-list li a {
+  color: #f1f0f1;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#showcase #header .nav .nav-list li a.active {
+  color: #ffb00d;
+}
+
+#showcase #header .nav .nav-list li a:hover {
+  color: #ffb00d;
+}
+
+#showcase #header .cart-container {
+  cursor: pointer;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#showcase #header .cart-container .fa-cart-plus {
+  font-size: 1.25rem;
+  color: #f1f0f1;
+}
+
+#showcase #header .cart-container .cart-itmes {
+  position: absolute;
+  top: -10px;
+  left: 80%;
+  background-color: #ffb00d;
+  height: 18px;
+  width: 18px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  line-height: 0;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#showcase #header .toggle-btn {
+  cursor: pointer;
+  display: none;
+}
+
+#showcase #header .toggle-btn span {
+  display: inline-block;
+  height: 2px;
+  width: 20px;
+  background-color: #000;
+  -webkit-transform-origin: 20px;
+          transform-origin: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#showcase #header .toggle-btn span:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+#showcase #header .toggle-btn.active span:nth-child(1) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+#showcase #header .toggle-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#showcase #header .toggle-btn.active span:nth-child(3) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#showcase #header.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+}
+
+#showcase .slides {
+  padding: 0;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+#showcase .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#showcase .slide img {
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+
+#showcase .slide .content {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 2;
+}
+
+#showcase .slide .content .title,
+#showcase .slide .content .body-text {
+  color: #f1f0f1;
+}
+
+#showcase .slide .content .title {
+  font-size: 4rem;
+  letter-spacing: 5px;
+}
+
+#showcase .slide .content .body-text {
+  font-size: 1.25rem;
+}
+
+#showcase .slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#showcase #slide-indicator {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 30;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#showcase #slide-indicator li {
+  padding: 0.5em;
+  line-height: 0;
+  cursor: pointer;
+}
+
+#showcase #slide-indicator li.active {
+  border: 1px dashed #000;
+}
+
+#showcase #slide-indicator span {
+  display: inline-block;
+  height: 3px;
+  width: 100px;
+  background-color: #f1f0f1;
+}
+
+#showcase .overlay {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+@media (max-width: 800px) {
+  #showcase {
+    overflow-x: hidden;
+  }
+  #showcase #header .nav {
+    position: absolute;
+    inset: 0 0 0 30%;
+    padding: 10vh 2em;
+    height: 100vh;
+    background: #000;
+    z-index: 1000;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  #showcase #header .nav.active {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  #showcase #header .nav-list {
+    height: 100%;
+    width: 100%;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: flex-start !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+    gap: 1em;
+  }
+  #showcase #header .nav-list li {
+    margin: 0 !important;
+  }
+  #showcase #header .cart-container {
+    margin-left: auto;
+    margin-right: 2.5em;
+  }
+  #showcase #header .toggle-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 1001;
+  }
+  #showcase #header .toggle-btn span {
+    background-color: #f1f0f1;
+  }
 }
 /*# sourceMappingURL=style.css.map */
