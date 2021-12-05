@@ -11,7 +11,7 @@
 // showcase
 #showcase {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
 
   // header
   #header {
@@ -213,17 +213,6 @@
       width: 100px;
       background-color: $light;
     }
-  }
-
-  //   overlay ===========
-  .overlay {
-    position: absolute;
-    inset: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    mix-blend-mode: multiply;
-    z-index: 1;
   }
 }
 
@@ -531,6 +520,43 @@
       .social-icons {
         justify-content: flex-start;
       }
+    }
+  }
+}
+
+// =============== products page
+
+.showcase.products-showcase {
+  height: 80vh !important;
+
+  .products-hero {
+    position: absolute;
+    inset: 0;
+    @include flex(column, center, flex-start);
+
+    &::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    .main-title {
+      color: $light;
+      position: relative;
+      z-index: 20;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
     }
   }
 }

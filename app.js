@@ -1,10 +1,10 @@
-// showcase section ============
+// ============ showcase section
 const toggleBtn = document.querySelector(".toggle-btn");
 const nav = document.querySelector(".nav");
 const navLinks = [...document.querySelectorAll(".nav-list li a")];
 const header = document.querySelector("#header");
 
-/// header section ============
+/// ============ header section
 
 // set active class to toggle btn
 function toggleActive() {
@@ -57,7 +57,8 @@ navLinks.forEach((link) =>
 
 window.addEventListener("scroll", stickyHeader);
 
-/// showcase slide section ============
+/// ============ showcase slide section
+
 const slides = [...document.querySelectorAll(".slide")];
 const slideIndicator = document.querySelector("#slide-indicator");
 let auto = true;
@@ -118,7 +119,7 @@ if (auto) {
 
 window.addEventListener("DOMContentLoaded", indicator);
 
-/// about section ============
+/// ============ about section
 
 const frontImg = document.querySelector("#about-imgs .front");
 const aboutImgs = [...document.querySelectorAll("#about-imgs img")];
