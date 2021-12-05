@@ -77,7 +77,7 @@ function indicator() {
     li.addEventListener("click", (e) => {
       const current = e.currentTarget;
       const currentIndex = lists.findIndex((li) => li === current);
-      
+
       lists.forEach((li) => li.classList.remove("active"));
       current.classList.add("active");
 
@@ -117,3 +117,16 @@ if (auto) {
 }
 
 window.addEventListener("DOMContentLoaded", indicator);
+
+/// about section ============
+
+const frontImg = document.querySelector("#about-imgs .front");
+const aboutImgs = [...document.querySelectorAll("#about-imgs img")];
+
+aboutImgs.forEach(img => img.addEventListener('click', e =>{
+  const currentImg = e.currentTarget
+  const currentSrc = currentImg.src
+  
+  currentImg.src = frontImg.src
+  frontImg.src = currentSrc
+}))
