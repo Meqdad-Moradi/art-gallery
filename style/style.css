@@ -586,6 +586,9 @@ section {
 }
 
 @media (max-width: 820px) {
+  #showcase .logo h1 {
+    font-size: 1.25rem !important;
+  }
   #showcase .slide .content .title {
     font-size: 2rem;
   }
@@ -608,6 +611,9 @@ section {
 @media (max-width: 760px) {
   #showcase {
     overflow-x: hidden;
+  }
+  #showcase #header .logo h1 {
+    font-size: 1.5rem !important;
   }
   #showcase #header .nav {
     position: absolute;

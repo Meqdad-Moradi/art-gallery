@@ -375,6 +375,12 @@
 // media
 @media (max-width: 820px) {
   #showcase {
+    .logo {
+      h1 {
+        font-size: 1.25rem !important;
+      }
+    }
+
     .slide {
       .content {
         .title {
@@ -410,7 +416,12 @@
     overflow-x: hidden;
 
     #header {
-      // nav
+      .logo {
+        h1 {
+          font-size: 1.5rem !important;
+        }
+      }
+
       .nav {
         position: absolute;
         inset: 0;

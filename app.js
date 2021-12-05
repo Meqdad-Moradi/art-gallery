@@ -123,10 +123,12 @@ window.addEventListener("DOMContentLoaded", indicator);
 const frontImg = document.querySelector("#about-imgs .front");
 const aboutImgs = [...document.querySelectorAll("#about-imgs img")];
 
-aboutImgs.forEach(img => img.addEventListener('click', e =>{
-  const currentImg = e.currentTarget
-  const currentSrc = currentImg.src
-  
-  currentImg.src = frontImg.src
-  frontImg.src = currentSrc
-}))
+aboutImgs.forEach((img) =>
+  img.addEventListener("click", (e) => {
+    const currentImg = e.currentTarget;
+    const currentSrc = currentImg.src;
+
+    currentImg.src = frontImg.src;
+    frontImg.src = currentSrc;
+  })
+);
