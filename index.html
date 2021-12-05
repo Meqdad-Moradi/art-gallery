@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="./style/style.css" />
     <script src="./app.js" defer></script>
-    <title>Art Gallery</title>
+    <title>Modern Art Gallery</title>
   </head>
   <body>
     <div class="showcase" id="showcase">
@@ -21,16 +21,17 @@
         <div class="container">
           <div class="logo">
             <a href="./index.html" class="logo-link">
-              <h1>art <span>gallery</span></h1>
+              <h1>modern <span>art gallery</span></h1>
             </a>
           </div>
 
           <nav class="nav">
             <ul class="nav-list">
               <li><a href="./index.html" class="active">home</a></li>
-              <li><a href="#">gallery</a></li>
-              <li><a href="#">about</a></li>
-              <li><a href="#">contact</a></li>
+              <li><a href="./products.html">catalog</a></li>
+              <li><a href="#gallery">gallery</a></li>
+              <li><a href="#about">about</a></li>
+              <li><a href="#contact">contact</a></li>
             </ul>
           </nav>
 
@@ -59,7 +60,7 @@
             <p class="body-text">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             </p>
-            <a href="#" class="btn">learn more</a>
+            <a href="#featured" class="btn">learn more</a>
           </div>
         </div>
 
@@ -96,5 +97,95 @@
       <ul id="slide-indicator"></ul>
     </div>
     <!-- end of showcase -->
+
+    <!-- featured section -->
+    <section id="featured">
+      <div class="container">
+        <div class="featured-content">
+          <article class="col">
+            <h1 class="main-title">your day at gallery</h1>
+            <p class="body-text">
+              wander through our distinct collection and find insights about our
+              artist. Dive into the details of their creative process.
+            </p>
+          </article>
+
+          <article class="col">
+            <picture>
+              <source srcset="./images/l2.jpg" media="(min-width: 800px)" />
+              <img src="./images/p4.jpg" alt="hero img" />
+            </picture>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- end of featured section -->
+
+    <!-- gallery section -->
+    <section id="gallery">
+      <div class="container">
+        <div class="gallery-content">
+          <article class="col">
+            <picture>
+              <source srcset="./images/p3.jpg" media="(min-width: 800px)" />
+              <img src="./images/l3.jpg" alt="hero img" />
+            </picture>
+          </article>
+
+          <article class="col">
+            <picture>
+              <source srcset="./images/l2.jpg" media="(min-width: 800px)" />
+              <img src="./images/p4.jpg" alt="hero img" />
+            </picture>
+          </article>
+
+          <article class="col">
+            <h1 class="main-title">come & be <span>inspired</span></h1>
+            <p class="body-text">
+              we're excited to welcome you to our gallery and see how our
+              collections influence you.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- end of gallery section -->
+
+    <!-- footer -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="logo">
+            <a href="./index.html" class="logo-link">
+              <h1>modern <span>art gallery</span></h1>
+            </a>
+          </div>
+
+          <p class="body-text">
+            the Modern Art Gallery is free to all visitors and open seven days a
+            week from 8am to 9pm. Find us at 99 King Street, Newport, USA.
+          </p>
+
+          <ul class="social-icons">
+            <li>
+              <a href="http://www.facebook.com/" target="_blank"
+                ><i class="fab fa-facebook-square"></i
+              ></a>
+            </li>
+            <li>
+              <a href="http://www.instagram.com/" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a href="http://www.twitter.com/" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- end of footer -->
   </body>
 </html>

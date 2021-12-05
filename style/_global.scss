@@ -69,23 +69,8 @@ section {
   font-weight: 700;
   font-size: 2.625rem;
   font-family: "Bebas Neue", cursive;
-
-  position: relative;
-  width: max-content;
-
-  &::after {
-    content: "";
-    height: 8px;
-    width: 102%;
-    background-color: $yellow;
-    opacity: 0.3;
-    position: absolute;
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
-    border-radius: 50px;
-    z-index: -1;
-  }
+  letter-spacing: 2px;
+  line-height: 1;
 }
 
 .title {
@@ -102,4 +87,5 @@ section {
 
 .body-text {
   font-size: 1rem;
+  margin-top: 1em;
 }
