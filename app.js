@@ -72,7 +72,7 @@ function indicator() {
         <li><span></span></li>`;
   });
 
-  // select the li tag from slider indicator
+  // select the indicator li tag from slider indicator
   const lists = [...slideIndicator.querySelectorAll("li")];
   lists.forEach((li) =>
     li.addEventListener("click", (e) => {
@@ -110,8 +110,6 @@ function slider() {
     slides[0].classList.add("active");
   }
 }
-
-slider();
 
 if (auto) {
   interval = setInterval(slider, intervalTime);

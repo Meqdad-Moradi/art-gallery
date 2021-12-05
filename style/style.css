@@ -684,7 +684,6 @@ section {
   }
   #about .col:first-child {
     max-width: 100%;
-    background-color: red;
   }
   #about .col:first-child img {
     inset: 0 !important;
