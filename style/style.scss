@@ -1,6 +1,6 @@
-@import "colors";
-@import "mixins";
-@import "global";
+@import "./assets/colors";
+@import "./assets/mixins";
+@import "./assets/global";
 
 .container {
   width: 80%;
@@ -63,6 +63,54 @@
           }
           a:hover {
             color: $yellow;
+          }
+        }
+
+        li.services-nav {
+          position: relative;
+
+          button {
+            cursor: pointer;
+            color: $light;
+            font-family: "Poppins", sans-serif;
+            font-size: 1.125rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            transition: all 0.3s ease-in-out;
+
+            &:focus + .services-nav-container {
+              opacity: 1;
+              pointer-events: auto;
+            }
+
+            &:hover,
+            &:focus {
+              color: $yellow;
+            }
+          }
+
+          .services-nav-container {
+            position: fixed;
+            // top: calc(70px + 0.8em);
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: $black;
+            padding: 100px 2em 2em;
+            @include flex($jc: space-evenly);
+            opacity: 0;
+            z-index: -1;
+            pointer-events: none;
+            transition: all 0.3s ease-in-out;
+          }
+
+          .services-nav-list {
+            height: 50vh;
+            @include flex(column, space-evenly);
+
+            li {
+              margin-right: 0;
+            }
           }
         }
       }
@@ -220,6 +268,37 @@
 #featured {
   .featured-content {
     @include grid();
+    overflow: hidden;
+
+    #featured-img {
+      transform: translateX(100%);
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .main-title,
+    .body-text {
+      transform: translateY(30px);
+      opacity: 0;
+      transition: all 1s ease-in-out;
+    }
+  }
+
+  &.active {
+    #featured-img {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+
+    .main-title,
+    .body-text {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+
+    .body-text {
+      transition-delay: 0.5s;
+    }
   }
 }
 
@@ -419,6 +498,7 @@
         width: 50%;
         background: $black;
         z-index: 1000;
+        overflow-y: scroll;
 
         transform: translateX(120%);
         transition: all 0.3s ease-in-out;

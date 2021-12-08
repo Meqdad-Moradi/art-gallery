@@ -43,7 +43,6 @@ function stickyHeader() {
 }
 
 // call the functions
-
 toggleBtn.addEventListener("click", () => {
   toggleActive();
   navToggle();
@@ -117,7 +116,7 @@ if (auto) {
 
 window.addEventListener("DOMContentLoaded", indicator);
 
-/// ============ about section
+// ============ about section
 
 const frontImg = document.querySelector("#about-imgs .front");
 const aboutImgs = [...document.querySelectorAll("#about-imgs img")];

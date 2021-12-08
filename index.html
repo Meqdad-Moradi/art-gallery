@@ -12,7 +12,8 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./style/style.css" />
-    <script src="./app.js" defer></script>
+    <script src="./app/app.js" defer></script>
+
     <title>Modern Art Gallery</title>
   </head>
   <body id="home-page'">
@@ -110,7 +111,7 @@
             </p>
           </article>
 
-          <article class="col">
+          <article class="col" id="featured-img">
             <picture>
               <source srcset="./images/l2.jpg" media="(min-width: 800px)" />
               <img src="./images/p4.jpg" alt="hero img" />
@@ -210,5 +211,9 @@
       </div>
     </footer>
     <!-- end of footer -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script src="./app/gsap.js"></script>
   </body>
 </html>
