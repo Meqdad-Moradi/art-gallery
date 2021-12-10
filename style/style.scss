@@ -69,6 +69,12 @@
         li.services-nav {
           position: relative;
 
+          &.active > .services-nav-container {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0px);
+          }
+
           button {
             cursor: pointer;
             color: $light;
@@ -78,30 +84,43 @@
             letter-spacing: 1px;
             transition: all 0.3s ease-in-out;
 
-            &:focus + .services-nav-container {
-              opacity: 1;
-              pointer-events: auto;
+            &::after {
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              font-size: 0.8rem;
+
+              content: "\f078";
+              color: $light;
+              padding-left: 0.3em;
+              transition: all 0.3s ease-in-out;
             }
 
             &:hover,
-            &:focus {
+            &:hover::after,
+            &:focus,
+            &:focus::after {
               color: $yellow;
             }
           }
 
           .services-nav-container {
+            @include flex($jc: space-evenly);
             position: fixed;
-            // top: calc(70px + 0.8em);
             top: 0;
             left: 0;
             width: 100%;
             background-color: $black;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.6);
             padding: 100px 2em 2em;
-            @include flex($jc: space-evenly);
             opacity: 0;
             z-index: -1;
             pointer-events: none;
-            transition: all 0.3s ease-in-out;
+            transform: translateY(-30px);
+            transition: all 0.5s ease-in-out;
+          }
+
+          .go-back {
+            display: none;
           }
 
           .services-nav-list {
@@ -495,13 +514,13 @@
         inset: 0;
         padding: min(30vh, 10vh) 2em;
         height: 100vh;
-        width: 50%;
+        width: 50% !important;
         background: $black;
         z-index: 1000;
         overflow-y: scroll;
 
         transform: translateX(120%);
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease-in-out;
 
         &.active {
           transform: translateX(20%);
@@ -518,6 +537,49 @@
 
         li {
           margin: 0 !important;
+        }
+
+        li.services-nav {
+          button:focus + .services-nav-container {
+            transform: translateX(0%) !important;
+          }
+        }
+
+        .services-nav-container {
+          background-color: $dark !important;
+          height: 100vh !important;
+          width: 100%;
+          padding: min(30vh, 10vh) 2em;
+          overflow-y: scroll;
+          opacity: 1 !important;
+          z-index: 1001 !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          padding: 0;
+          transform: translateX(100%) !important;
+
+          .go-back {
+            display: block !important;
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            transition: all 0.3s ease-in-out;
+
+            i {
+              font-size: 1.25rem;
+              color: $light;
+            }
+          }
+
+          .services-nav-list {
+            height: auto !important;
+            height: 100%;
+            width: 100%;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            justify-content: center !important;
+            gap: 1em;
+          }
         }
       }
 
