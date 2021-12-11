@@ -1,9 +1,9 @@
-// const requstedURL =
-//   "https://raw.githubusercontent.com/Meqdad-Moradi/womensbest-chalange/main/data.json";
+const requstedURL =
+  "https://raw.githubusercontent.com/Meqdad-Moradi/art-gallery/main/data.json";
 
 async function getProducts() {
   try {
-    let result = await fetch("./data.json");
+    let result = await fetch(requstedURL);
     let data = await result.json();
     showProducts(data);
   } catch (error) {
@@ -36,5 +36,5 @@ function showProducts(data) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  getProducts()
+  getProducts();
 });

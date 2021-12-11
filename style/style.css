@@ -94,7 +94,7 @@ section {
 
 #showcase.products-showcase {
   height: 80vh;
-  max-height: 80vh;
+  min-height: 80vh;
   overflow: hidden;
 }
 
@@ -216,7 +216,7 @@ section {
 
 #showcase {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #showcase #header {
