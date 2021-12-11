@@ -1,6 +1,7 @@
 @import "./assets/colors";
 @import "./assets/mixins";
 @import "./assets/global";
+@import "./assets/productPage";
 
 .container {
   width: 80%;
@@ -499,7 +500,8 @@
 }
 
 @media (max-width: 760px) {
-  #showcase {
+  #showcase,
+  .showcase.products-showcase {
     overflow-x: hidden;
 
     #header {
@@ -661,43 +663,6 @@
       .social-icons {
         justify-content: flex-start;
       }
-    }
-  }
-}
-
-// =============== products page
-
-.showcase.products-showcase {
-  height: 80vh !important;
-
-  .products-hero {
-    position: absolute;
-    inset: 0;
-    @include flex(column, center, flex-start);
-
-    &::after {
-      content: "";
-      height: 100%;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-    }
-
-    .main-title {
-      color: $light;
-      position: relative;
-      z-index: 20;
-    }
-
-    img {
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      position: absolute;
-      inset: 0;
-      z-index: -1;
     }
   }
 }

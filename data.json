@@ -2,25 +2,29 @@
   {
     "id": 1,
     "name": "Portrait Picture",
+    "src": "./images/p1.jpg",
     "desc": "This item is made by mark Zakirberg",
     "price": 1000
   },
   {
     "id": 2,
     "name": "Monaliza",
+    "src": "./images/p2.jpg",
     "desc": "This item is made by mark Zakirberg",
-    "price": 1000
+    "price": 9000
   },
   {
     "id": 3,
     "name": "Innsbruck Picture",
+    "src": "./images/p3.jpg",
     "desc": "This item is made by mark Zakirberg",
-    "price": 1000
+    "price": 500
   },
   {
     "id": 4,
     "name": "Landscape Picture",
+    "src": "./images/hero.jpg",
     "desc": "This item is made by mark Zakirberg",
-    "price": 1000
+    "price": 1500
   }
 ]
