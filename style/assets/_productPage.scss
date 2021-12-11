@@ -89,8 +89,8 @@
 
 @media (max-width: 760px) {
   #showcase.products-showcase {
-    height: 100vh;
-    min-height: 100vh;
+    height: 100vh !important;
+    min-height: 100vh !important;
     overflow: hidden;
   }
 }
