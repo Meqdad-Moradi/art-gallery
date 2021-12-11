@@ -87,10 +87,10 @@
   }
 }
 
-// @media (max-width: 760px) {
-//   #showcase.products-showcase {
-//     height: 100vh;
-//     min-height: 100vh;
-//     overflow: hidden;
-//   }
-// }
+@media (max-width: 760px) {
+  #showcase.products-showcase {
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+}
