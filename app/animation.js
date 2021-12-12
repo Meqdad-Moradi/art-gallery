@@ -2,28 +2,26 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: "#header",
     start: "top",
-    // end: "50%",
+    end: "50%",
     scrub: true,
   },
 });
 
-tl.from("#header", { paddingTop: ".5em" });
-tl.from(".go-back", { paddingTop: ".5em" });
-
-// ============= animate the featured section
-// const tl2 = gsap.timeline({
-//   scrollTrigger: {
-//     trigger: "#featured",
-//     toggleActions: "play pause resume restart",
-//     // toggleActions: 'play pause resume reverse restart reset complete none',
-//     start: "top 80%",
-//   },
-// });
+tl.from("#header", {
+  paddingTop: ".5em"
+});
+tl.from(".go-back", {
+  paddingTop: ".5em"
+});
 
 // ============= animate the go back button
 const goBack = document.querySelector(".services-nav");
 goBack.addEventListener("click", () => {
-  gsap.from(".go-back i", { opacity: 0, x: 10, duration: 1 });
+  gsap.from(".go-back i", {
+    opacity: 0,
+    x: 10,
+    duration: 1
+  });
 });
 
 

@@ -6,12 +6,11 @@ window.addEventListener("scroll", animateFeatured);
 
 function animateFeatured() {
   const top = featured.offsetTop;
-  const bottom = top + featured.offsetHeight / 2;
+  const bottom = top + featured.offsetHeight / 3;
   const scroll = window.pageYOffset + window.innerHeight;
   const featuredAppeared = scroll > bottom;
-  const stillIn = window.pageYOffset < bottom;
 
-  if (featuredAppeared && stillIn) {
+  if (featuredAppeared) {
     featured.classList.add("active");
   } else {
     featured.classList.remove("active");
@@ -24,7 +23,7 @@ const slides = [...document.querySelectorAll(".slide")];
 const slideIndicator = document.querySelector("#slide-indicator");
 let auto = true;
 let interval;
-let intervalTime = 5000;
+let intervalTime = 8000;
 
 // create slide indicator
 function indicator() {

@@ -1,141 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./style/style.css" />
-    <script src="./app/app.js" defer></script>
-    <script src="./app/productApp.js" defer></script>
+  <!-- style links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Modern Art Gallery</title>
-  </head>
-  <body>
-    <div class="showcase products-showcase" id="showcase">
-      <header id="header">
-        <div class="container">
-          <div class="logo">
-            <a href="./index.html" class="logo-link">
-              <h1>art <span>gallery</span></h1>
-            </a>
-          </div>
+  <link rel="stylesheet" href="./style/style.css" />
 
-          <nav class="nav">
-            <ul class="nav-list">
-              <li><a href="./index.html">home</a></li>
-              <li><a href="./products.html" class="active">catalog</a></li>
-              <li><a href="./index.html#gallery">gallery</a></li>
+  <!-- js links -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js" defer></script>
+  <script src="./app/animation.js" defer></script>
+  <script src="./app/app.js" defer></script>
+  <script src="./app/productApp.js" defer></script>
 
-              <li class="services-nav" data-dropdown>
-                <button class="dropdown-btn" data-dropdown-btn>services</button>
-                <div class="services-nav-container">
-                  <div class="go-back">
-                    <i class="fas fa-long-arrow-alt-left"></i>
-                  </div>
+  <title>Modern Art Gallery</title>
+</head>
 
-                  <ul class="services-nav-list">
-                    <li><a href="./index.html#about">HTML 5</a></li>
-                    <li><a href="./index.html#featured">CSS 3</a></li>
-                    <li><a href="#">javaScript</a></li>
-                    <li><a href="#">typescript</a></li>
-                    <li><a href="#">bootstrap</a></li>
-                  </ul>
+<body id="product-page">
+  <div class="showcase products-showcase" id="showcase">
+    <header id="header">
+      <div class="container">
+        <div class="logo">
+          <a href="./index.html" class="logo-link">
+            <h1>art <span>gallery</span></h1>
+          </a>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="./index.html">home</a></li>
+            <li><a href="./products.html" class="active">catalog</a></li>
+            <li><a href="./index.html#gallery">gallery</a></li>
+
+            <li class="services-nav" data-dropdown>
+              <button class="dropdown-btn" data-dropdown-btn>services</button>
+              <div class="services-nav-container">
+                <div class="go-back">
+                  <i class="fas fa-long-arrow-alt-left"></i>
                 </div>
-              </li>
 
-              <li><a href="./index.html#about">about</a></li>
-              <li><a href="#contact">contact</a></li>
-            </ul>
-          </nav>
+                <ul class="services-nav-list">
+                  <li><a href="./index.html#about">HTML 5</a></li>
+                  <li><a href="./index.html#featured">CSS 3</a></li>
+                  <li><a href="#">javaScript</a></li>
+                  <li><a href="#">typescript</a></li>
+                  <li><a href="#">bootstrap</a></li>
+                </ul>
+              </div>
+            </li>
 
-          <div class="cart-container">
-            <i class="fas fa-cart-plus"></i>
-            <p class="cart-itmes">0</p>
-          </div>
+            <li><a href="./index.html#about">about</a></li>
+            <li><a href="#contact">contact</a></li>
+          </ul>
+        </nav>
 
-          <div class="toggle-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+        <div class="cart-container">
+          <i class="fas fa-cart-plus"></i>
+          <p class="cart-itmes">0</p>
         </div>
-      </header>
 
-      <!-- showcase hero -->
-      <div class="products-hero">
-        <div class="container">
-          <img src="./images/l1.jpg" alt="hero image" />
-          <h1 class="main-title">Products page</h1>
+        <div class="toggle-btn">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+      </div>
+    </header>
+
+    <!-- showcase hero -->
+    <div class="products-hero">
+      <div class="container">
+        <img src="./images/l1.jpg" alt="hero image" />
+        <h1 class="main-title">Products page</h1>
       </div>
     </div>
-    <!-- end of showcase -->
+  </div>
+  <!-- end of showcase -->
 
-    <!-- product section -->
-    <section id="products">
-      <div class="container">
-        <div class="product-setion-title">
-          <h1 class="main-title">our products</h1>
-          <p class="body-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            quos reiciendis odit porro, eligendi quaerat.
-          </p>
+  <!-- product section -->
+  <section id="products">
+    <div class="container">
+      <div class="product-setion-title">
+        <h1 class="main-title">our products</h1>
+        <p class="body-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+          quos reiciendis odit porro, eligendi quaerat.
+        </p>
+      </div>
+
+      <!-- product items cart -->
+      <div class="product-items"></div>
+    </div>
+  </section>
+  <!-- end of product section -->
+
+  <!-- footer section -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="logo">
+          <a href="./index.html" class="logo-link">
+            <h1>art <span>gallery</span></h1>
+          </a>
         </div>
 
-        <!-- product items cart -->
-        <div class="product-items"></div>
+        <p class="body-text">
+          the Modern Art Gallery is free to all visitors and open seven days a
+          week from 8am to 9pm. Find us at 99 King Street, Newport, USA.
+        </p>
+
+        <ul class="social-icons">
+          <li>
+            <a href="http://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          </li>
+          <li>
+            <a href="http://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="http://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+          </li>
+        </ul>
       </div>
-    </section>
-    <!-- end of product section -->
+    </div>
+  </footer>
+  <!-- end of footer -->
+</body>
 
-    <!-- footer section -->
-    <footer id="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="logo">
-            <a href="./index.html" class="logo-link">
-              <h1>art <span>gallery</span></h1>
-            </a>
-          </div>
-
-          <p class="body-text">
-            the Modern Art Gallery is free to all visitors and open seven days a
-            week from 8am to 9pm. Find us at 99 King Street, Newport, USA.
-          </p>
-
-          <ul class="social-icons">
-            <li>
-              <a href="http://www.facebook.com/" target="_blank"
-                ><i class="fab fa-facebook-square"></i
-              ></a>
-            </li>
-            <li>
-              <a href="http://www.instagram.com/" target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-            </li>
-            <li>
-              <a href="http://www.twitter.com/" target="_blank"
-                ><i class="fab fa-twitter"></i
-              ></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-    <!-- end of footer -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-    <script src="./app/animation.js"></script>
-  </body>
 </html>

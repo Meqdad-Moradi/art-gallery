@@ -122,7 +122,7 @@ section {
   content: "";
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -165,8 +165,9 @@ section {
 
 #products .card-item {
   border: 1px solid #f1f0f1;
-  border-radius: 10px;
   overflow: hidden;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 #products .card-item .product-imgs {
@@ -176,8 +177,8 @@ section {
 #products .card-item .product-imgs img {
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 #products .card-item .product-item-content {
@@ -199,8 +200,8 @@ section {
 }
 
 #products .card-item:hover {
-  -webkit-box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.3);
 }
 
 #products .card-item:hover .product-imgs img {
@@ -491,6 +492,7 @@ section {
   padding: 0;
   position: absolute;
   inset: 0;
+  overflow: hidden;
   z-index: 1;
 }
 
@@ -499,8 +501,8 @@ section {
   inset: 0;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 #showcase .slide img {
@@ -516,8 +518,23 @@ section {
   inset: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 35vh 10%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-left: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   z-index: 20;
 }
 
@@ -527,8 +544,8 @@ section {
 }
 
 #showcase .slide .content .title {
-  font-size: 4rem;
-  letter-spacing: 5px;
+  font-size: 3.5rem;
+  letter-spacing: 8px;
   line-height: 1;
 }
 
@@ -596,41 +613,17 @@ section {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-}
-
-#featured .featured-content #featured-img {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-#featured .featured-content .main-title,
-#featured .featured-content .body-text {
   -webkit-transform: translateY(30px);
           transform: translateY(30px);
   opacity: 0;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
-#featured.active #featured-img {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-  opacity: 1;
-}
-
-#featured.active .main-title,
-#featured.active .body-text {
+#featured.active .featured-content {
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
   opacity: 1;
-}
-
-#featured.active .body-text {
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
 }
 
 #gallery {
@@ -648,12 +641,25 @@ section {
       grid-template-areas: "first first first second second " "first first first third third ";
 }
 
+#gallery .col {
+  overflow: hidden;
+}
+
 #gallery .col img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: bottom;
      object-position: bottom;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+}
+
+#gallery .col:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #gallery .col:first-child {
