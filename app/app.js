@@ -95,4 +95,12 @@ function showProducts(data) {
   productItems.innerHTML = products;
 }
 
+// select the cart elements
+const cartItems = document.querySelector('.cart-items')
+const cartItems = document.querySelector('.cart-items')
+const cartItems = document.querySelector('.cart-items')
+const cartItems = document.querySelector('.cart-items')
+const cartItems = document.querySelector('.cart-items')
+
+
 window.addEventListener("DOMContentLoaded", getProducts);
