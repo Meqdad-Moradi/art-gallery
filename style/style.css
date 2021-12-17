@@ -53,7 +53,7 @@ a {
   padding: 0.4em 1.5em;
   margin-top: 2em;
   border-radius: 5px;
-  cursor: pointer !important;
+  cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -453,17 +453,24 @@ section {
 
 #showcase #header .cart-container .cart-content {
   position: fixed;
-  width: 35%;
+  width: 35vw;
+  min-width: 35vw;
   height: 100vh;
   overflow-y: scroll;
   top: 0;
   right: 0;
   background-color: #fff;
+  -webkit-box-shadow: -10px 5px 10px -4px rgba(0, 0, 0, 0.3);
+          box-shadow: -10px 5px 10px -4px rgba(0, 0, 0, 0.3);
   padding: 3em 2em;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
+}
+
+#showcase #header .cart-container .cart-content .cart-info {
+  text-align: center;
 }
 
 #showcase #header .cart-container .cart-close-btn {
@@ -485,8 +492,8 @@ section {
   position: absolute;
   left: 15px;
   top: 15px;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   border-radius: 5px;
   background-color: #ffb00d;
   color: #fff;
@@ -504,40 +511,61 @@ section {
 }
 
 #showcase #header .cart-container .main-title {
-  margin: 0.5em 0 1em 0;
+  margin: 0.5em 0 2em 0;
   text-align: center;
   letter-spacing: 2px;
+  position: relative;
+}
+
+#showcase #header .cart-container .main-title::after {
+  content: '';
+  height: 3px;
+  width: 20%;
+  background-color: #ffb00d;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  opacity: .5;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 #showcase #header .cart-container .cart-items {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  grid-gap: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  gap: 2em;
 }
 
 #showcase #header .cart-container .cart-item {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 30% auto 30%;
-      grid-template-columns: 30% auto 30%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-grid-columns: 40% auto 30%;
+      grid-template-columns: 40% auto 30%;
 }
 
-#showcase #header .cart-container .cart-item-details {
-  margin-left: 1em;
+#showcase #header .cart-container .img-box {
+  margin-right: 1em;
+}
+
+#showcase #header .cart-container .img-box img {
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #showcase #header .cart-container .cart-item-details .title {
@@ -546,13 +574,15 @@ section {
   margin-bottom: .5em;
 }
 
+#showcase #header .cart-container .cart-item-details .price {
+  font-weight: 500;
+  color: #ffb00d;
+}
+
 #showcase #header .cart-container .cart-item-details .remove-item-btn {
-  background-color: #808080;
-  color: #fff;
-  padding: .3em .5em;
-  border-radius: 5px;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 #showcase #header .cart-container .cart-item-controler {
@@ -571,6 +601,16 @@ section {
       -ms-flex-align: center;
           align-items: center;
   margin-left: auto;
+}
+
+#showcase #header .cart-container .cart-item-controler span#up,
+#showcase #header .cart-container .cart-item-controler span#down {
+  cursor: pointer;
+}
+
+#showcase #header .cart-container .cart-footer {
+  margin-top: 2em;
+  text-align: center;
 }
 
 #showcase #header .toggle-btn {
@@ -1097,6 +1137,10 @@ section {
   .showcase.products-showcase #header .cart-container {
     margin-left: auto;
     margin-right: 2.5em;
+  }
+  #showcase #header .cart-container .cart-content,
+  .showcase.products-showcase #header .cart-container .cart-content {
+    min-width: 90vw;
   }
   #showcase #header .toggle-btn,
   .showcase.products-showcase #header .toggle-btn {

@@ -18,7 +18,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js" defer></script>
   <script src="./app/animation.js" defer></script>
   <script src="./app/app.js" defer></script>
-  <script src="./app/productApp.js" defer></script>
 
   <title>Modern Art Gallery</title>
 </head>
@@ -62,8 +61,20 @@
         </nav>
 
         <div class="cart-container">
-          <i class="fas fa-cart-plus"></i>
-          <p class="cart-itmes">0</p>
+          <i class="fas fa-cart-plus" id="show-cart"></i>
+          <p class="cart-state-amount">0</p>
+
+          <div class="cart-content">
+            <h2 class="main-title">your cart</h2>
+            <div class="cart-close-btn"><i class="fas fa-times"></i></div>
+
+            <div class="cart-items"></div>
+
+            <div class="cart-footer">
+              <h3 class="total-price"></h3>
+              <button class="btn" id="checkout-btn">checkout</button>
+            </div>
+          </div>
         </div>
 
         <div class="toggle-btn">

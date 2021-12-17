@@ -172,15 +172,22 @@
 
       .cart-content {
         position: fixed;
-        width: 35%;
+        width: 35vw;
+        min-width: 35vw;
         height: 100vh;
         overflow-y: scroll;
         top: 0;
         right: 0;
         background-color: $white;
+        box-shadow: -10px 5px 10px -4px rgba(0, 0, 0, 0.3);
         padding: 3em 2em;
         transform: translateX(100%);
-        transition: all .5s ease-in-out
+
+        transition: all .5s ease-in-out;
+
+        .cart-info {
+          text-align: center;
+        }
       }
 
       .cart-close-btn {
@@ -188,8 +195,8 @@
         position: absolute;
         left: 15px;
         top: 15px;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         border-radius: 5px;
         background-color: $yellow;
         color: $white;
@@ -206,24 +213,45 @@
       }
 
       .main-title {
-        margin: 0.5em 0 1em 0;
+        margin: 0.5em 0 2em 0;
         text-align: center;
         letter-spacing: 2px;
+        position: relative;
+
+        &::after {
+          content: '';
+          height: 3px;
+          width: 20%;
+          background-color: $yellow;
+          position: absolute;
+          bottom: -20px;
+          left: 50%;
+          opacity: .5;
+          transform: translateX(-50%);
+        }
       }
 
       .cart-items {
-        @include grid();
-        align-items: stretch;
+        @include flex(column, space-evenly);
+        gap: 2em;
       }
 
       .cart-item {
         display: grid;
-        grid-template-columns: 30% auto 30%;
-        justify-content: space-between;
+        grid-template-columns: 40% auto 30%;
+      }
+
+      .img-box {
+        margin-right: 1em;
+
+        img {
+          height: 100%;
+          object-position: center;
+          object-fit: cover;
+        }
       }
 
       .cart-item-details {
-        margin-left: 1em;
 
         .title {
           letter-spacing: 2px;
@@ -231,13 +259,15 @@
           margin-bottom: .5em;
         }
 
+        .price {
+          font-weight: 500;
+          color: $yellow;
+        }
+
         .remove-item-btn {
-          background-color: $gray;
-          color: $white;
-          padding: .3em .5em;
-          border-radius: 5px;
           font-family: 'Poppins', sans-serif;
           letter-spacing: 1px;
+          cursor: pointer;
         }
 
       }
@@ -245,10 +275,21 @@
       .cart-item-controler {
         @include flex(column, space-around);
         margin-left: auto;
+
+        span#up,
+        span#down {
+          cursor: pointer;
+        }
+      }
+
+      .cart-footer {
+        margin-top: 2em;
+        text-align: center;
       }
     }
 
     // cart end
+
 
     // toggle button
     .toggle-btn {
@@ -682,6 +723,10 @@
       .cart-container {
         margin-left: auto;
         margin-right: 2.5em;
+
+        .cart-content {
+          min-width: 90vw;
+        }
       }
 
       // toggle button
