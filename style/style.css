@@ -49,17 +49,24 @@ a {
   font-size: 1.125rem;
   text-transform: capitalize;
   background-color: #ffb00d;
+  background-image: linear-gradient(134deg, #ff006a, #ff8d00);
+  background-size: 100%;
   color: #fff;
-  padding: 0.4em 1.5em;
+  padding: .5em 1em;
   margin-top: 2em;
   border-radius: 5px;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .btn:hover {
   background-color: #000;
+  background-size: 130%;
+  -webkit-box-shadow: 6px 13px 20px #ff2d008a;
+          box-shadow: 6px 13px 20px #ff2d008a;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 section {
@@ -200,8 +207,10 @@ section {
 }
 
 #products .card-item:hover {
-  -webkit-box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 10px 20px -8px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 10px 20px -8px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
 }
 
 #products .card-item:hover .product-imgs img {
@@ -606,6 +615,13 @@ section {
 #showcase #header .cart-container .cart-item-controler span#up,
 #showcase #header .cart-container .cart-item-controler span#down {
   cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+#showcase #header .cart-container .cart-item-controler span#up:hover,
+#showcase #header .cart-container .cart-item-controler span#down:hover {
+  color: #ffb00d;
 }
 
 #showcase #header .cart-container .cart-footer {

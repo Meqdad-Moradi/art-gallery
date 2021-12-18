@@ -77,7 +77,8 @@
     }
 
     &:hover {
-      box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.3);
+      box-shadow: 5px 10px 20px -8px rgba(0, 0, 0, 0.3);
+      transform: translateY(-8px);
 
       .product-imgs img {
         transform: scale(1.1);

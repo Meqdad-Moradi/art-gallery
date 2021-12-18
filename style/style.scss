@@ -279,6 +279,11 @@
         span#up,
         span#down {
           cursor: pointer;
+          transition: all .3s ease-in-out;
+
+          &:hover {
+            color: $yellow;
+          }
         }
       }
 
